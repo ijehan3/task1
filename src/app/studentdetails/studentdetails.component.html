@@ -1,0 +1,35 @@
+
+    <div class="container">
+        <p class = "text-center mt-5" style="font-size: 15px; background-color: white; width: 25%;">Passing score must be greater than 50</p>
+<table class="table table-condensed text-center">
+    <thead>
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>MARKS (out of 100)</th>
+            <th>Hieghest Mark</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor='let student of students'>
+            <td>{{student.Name}}</td>
+            <td>{{student.Email}}</td>
+            <td><span [ngStyle] ="{'color':student.Marks < 50 ? 'red' : 'green'}">
+                {{student.Marks}} </span></td>      
+        
+        <td>
+            <span [ngStyle] ="{'background-color':student.Marks < 50 ? 'red' : 'green'}">
+            <span *ngIf="student.Marks > 50" class="pass-badge">PASS </span>
+       <span *ngIf="student.Marks <= 50" class="fail-badge">FAIL </span>
+            </span>
+          </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="goHome float-left d-flex">
+<button [routerLink] = "['']" class="btn btn-primary">Go to Home</button>
+</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+    <p>Enter Your Name :</p> 
+    <input class="form-control-lg bg-white" placeholder="Enter Name" [(ngModel)]='Name'>
+    <p class="mt-2 text-dark"> You entered :  </p>
+    <p class=" text-white">{{Name}}</p>
+    <div class="goHome float-left d-flex">
+      <button [routerLink] = "['']" class="btn btn-primary">Go to Home</button>
+      </div>
+  </div>
